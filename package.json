@@ -3,21 +3,21 @@
     "name": "Alex Kaul",
     "email": "alexkaul@googlemail.com"
   },
-  "name": "ng-img-crop",
+  "name": "ng-img-crop-dynamic",
   "prettyName": "ngImgCrop",
   "version": "0.3.2",
   "description": "Image crop directive for AngularJS",
   "license": "MIT",
-  "homepage": "https://github.com/alexk111/ngImgCrop",
+  "homepage": "https://github.com/tommyp1ckles/ngImgCrop",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexk111/ngImgCrop.git"
+    "url": "https://github.com/tommyp1ckles/ngImgCrop.git"
   },
   "dependencies": {},
   "devDependencies": {
     "connect-livereload": "^0.4.0",
     "express": "^4.4.5",
-    "gulp": "^3.8.5",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "0.0.8",
     "gulp-compass": "^1.1.9",
     "gulp-concat": "^2.2.0",
