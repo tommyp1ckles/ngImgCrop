@@ -172,7 +172,15 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
       temp_canvas.width = theArea.getSize();
       temp_canvas.height = theArea.getSize();
       if(image!==null){
-        temp_ctx.drawImage(image, (theArea.getX()-theArea.getSize()/2)*(image.width/ctx.canvas.width), (theArea.getY()-theArea.getSize()/2)*(image.height/ctx.canvas.height), theArea.getSize()*(image.width/ctx.canvas.width), theArea.getSize()*(image.height/ctx.canvas.height), 0, 0, resImgSize, resImgSize);
+        temp_ctx.drawImage(
+          image,
+          (theArea.getX()-theArea.getSize()/2)*(image.width/ctx.canvas.width),
+          (theArea.getY()-theArea.getSize()/2)*(image.height/ctx.canvas.height),
+          theArea.getSize()*(image.width/ctx.canvas.width), theArea.getSize()*(image.height/ctx.canvas.height),
+          0,
+          0,
+          resImgSize,
+          resImgSize);
       }
       if (resImgQuality!==null ){
         return temp_canvas.toDataURL(resImgFormat, resImgQuality);
