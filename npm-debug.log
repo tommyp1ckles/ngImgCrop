@@ -1,0 +1,131 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.5.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.3
+3 info using node@v6.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/tomhadlaw/Code/snippets/ngImgCrop',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/tomhadlaw/.npm correctMkdir not in flight; initializing
+10 info lifecycle ng-img-crop-dynamic@0.3.2~prepublish: ng-img-crop-dynamic@0.3.2
+11 silly lifecycle ng-img-crop-dynamic@0.3.2~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package.tgz',
+12 verbose tar pack   '/Users/tomhadlaw/Code/snippets/ngImgCrop' ]
+13 verbose tarball /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package.tgz
+14 verbose folder /Users/tomhadlaw/Code/snippets/ngImgCrop
+15 verbose addLocalTarball adding from inside cache /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package.tgz
+16 verbose correctMkdir /Users/tomhadlaw/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd ng-img-crop-dynamic@0.3.2
+18 verbose afterAdd /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/tomhadlaw/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package/package.json written
+21 silly publish { author: { name: 'Alex Kaul', email: 'alexkaul@googlemail.com' },
+21 silly publish   name: 'ng-img-crop-dynamic',
+21 silly publish   prettyName: 'ngImgCrop',
+21 silly publish   version: '0.3.2',
+21 silly publish   description: 'Image crop directive for AngularJS',
+21 silly publish   license: 'MIT',
+21 silly publish   homepage: 'https://github.com/tommyp1ckles/ngImgCrop',
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/tommyp1ckles/ngImgCrop.git' },
+21 silly publish   dependencies: {},
+21 silly publish   devDependencies:
+21 silly publish    { 'connect-livereload': '^0.4.0',
+21 silly publish      express: '^4.4.5',
+21 silly publish      gulp: '^3.9.1',
+21 silly publish      'gulp-autoprefixer': '0.0.8',
+21 silly publish      'gulp-compass': '^1.1.9',
+21 silly publish      'gulp-concat': '^2.2.0',
+21 silly publish      'gulp-concat-util': '^0.2.3',
+21 silly publish      'gulp-header': '^1.0.2',
+21 silly publish      'gulp-jshint': '^1.6.4',
+21 silly publish      'gulp-livereload': '^2.1.0',
+21 silly publish      'gulp-minify-css': '^0.3.6',
+21 silly publish      'gulp-ng-annotate': '^0.2.0',
+21 silly publish      'gulp-open': '^0.2.8',
+21 silly publish      'gulp-plumber': '^0.6.3',
+21 silly publish      'gulp-rimraf': '^0.1.0',
+21 silly publish      'gulp-uglify': '^0.3.1',
+21 silly publish      'gulp-util': '^2.2.19',
+21 silly publish      'jshint-stylish': '^0.2.0',
+21 silly publish      minimist: '^0.2.0',
+21 silly publish      opn: '^0.1.2',
+21 silly publish      'tiny-lr': '0.0.7' },
+21 silly publish   readme: '# ngImgCrop\n\nSimple Image Crop directive for AngularJS. Enables to crop a circle or a square out of an image.\n\n## Screenshots\n\n![Circle Crop](https://raw.github.com/alexk111/ngImgCrop/master/screenshots/circle_1.jpg "Circle Crop")\n\n![Square Crop](https://raw.github.com/alexk111/ngImgCrop/master/screenshots/square_1.jpg "Square Crop")\n\n## Live demo\n\n[Live demo on JSFiddle](http://jsfiddle.net/alexk111/rw6q9/)\n\n## Requirements\n\n - AngularJS\n - Modern Browser supporting <canvas>\n\n## Installing\n\n### Download\n\nYou have two options to get the files:\n- [Download ngImgCrop](https://github.com/alexk111/ngImgCrop/archive/master.zip) files from GitHub.\n- Use Bower to download the files. Just run `bower install ngImgCrop`.\n\n### Add files\n\nAdd the scripts to your application. Make sure the `ng-img-crop.js` file is inserted **after** the `angular.js` library:\n\n```html\n<script src="angular.js"></script>\n<script src="ng-img-crop.js"></script>\n<link rel="stylesheet" type="text/css" href="ng-img-crop.css">\n```\n\n### Add a dependancy\n\nAdd the image crop module as a dependancy to your application module:\n\n```js\nvar myAppModule = angular.module(\'MyApp\', [\'ngImgCrop\']);\n```\n\n## Usage\n\n1. Add the image crop directive `<img-crop>` to the HTML file where you want to use an image crop control. *Note:* a container, you place the directive to, should have some pre-defined size (absolute or relative to its parent). That\'s required, because the image crop control fits the size of its container.\n2. Bind the directive to a source image property (using **image=""** option). The directive will read the image data from that property and watch for updates. The property can be a url to an image, or a data uri.\n3. Bind the directive to a result image property (using **result-image=""** option). On each update, the directive will put the content of the crop area to that property in the data uri format.\n4. Set up the options that make sense to your application.\n5. Done!\n\n## Result image\n\nThe result image will always be a square for the both circle and square area types. It\'s highly recommended to store the image as a square on your back-end, because this will enable you to easily update your pics later, if you decide to implement some design changes. Showing a square image as a circle on the front-end is not a problem - it is as easy as adding a *border-radius* style for that image in a css.\n\n## Example code\n\nThe following code enables to select an image using a file input and crop it. The cropped image data is inserted into img each time the crop area updates.\n\n```html\n<html>\n<head>\n  <script src="angular.js"></script>\n  <script src="ng-img-crop.js"></script>\n  <link rel="stylesheet" type="text/css" href="ng-img-crop.css">\n  <style>\n    .cropArea {\n      background: #E4E4E4;\n      overflow: hidden;\n      width:500px;\n      height:350px;\n    }\n  </style>\n  <script>\n    angular.module(\'app\', [\'ngImgCrop\'])\n      .controller(\'Ctrl\', function($scope) {\n        $scope.myImage=\'\';\n        $scope.myCroppedImage=\'\';\n\n        var handleFileSelect=function(evt) {\n          var file=evt.currentTarget.files[0];\n          var reader = new FileReader();\n          reader.onload = function (evt) {\n            $scope.$apply(function($scope){\n              $scope.myImage=evt.target.result;\n            });\n          };\n          reader.readAsDataURL(file);\n        };\n        angular.element(document.querySelector(\'#fileInput\')).on(\'change\',handleFileSelect);\n      });\n  </script>\n</head>\n<body ng-app="app" ng-controller="Ctrl">\n  <div>Select an image file: <input type="file" id="fileInput" /></div>\n  <div class="cropArea">\n    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>\n  </div>\n  <div>Cropped Image:</div>\n  <div><img ng-src="{{myCroppedImage}}" /></div>\n</body>\n</html>\n```\n\n## Options\n\n```html\n<img-crop\n    image="{string}"\n    result-image="{string}"\n   [change-on-fly="{boolean}"]\n   [area-type="{circle|square}"]\n   [area-min-size="{number}"]\n   [result-image-size="{number}"]\n   [result-image-format="{string}"]\n   [result-image-quality="{number}"]\n   [on-change="{expression}"]\n   [on-load-begin="{expression"]\n   [on-load-done="{expression"]\n   [on-load-error="{expression"]\n></img-crop>\n```\n\n### image\n\nAssignable angular expression to data-bind to. NgImgCrop gets an image for cropping from it.\n\n### result-image\n\nAssignable angular expression to data-bind to. NgImgCrop puts a data uri of a cropped image into it.\n\n### change-on-fly\n\n*Optional*. By default, to reduce CPU usage, when a user drags/resizes the crop area, the result image is only updated after the user stops dragging/resizing. Set true to always update the result image as the user drags/resizes the crop area.\n\n### area-type\n\n*Optional*. Type of the crop area. Possible values: circle|square. Default: circle.\n\n### area-min-size\n\n*Optional*. Min. width/height of the crop area (in pixels). Default: 80.\n\n### result-image-size\n\n*Optional*. Width/height of the result image (in pixels). Default: 200.\n\n### result-image-format\n\n*Optional*. Format of result image. Possible values include image/jpeg, image/png, and image/webp. Browser support varies. Default: image/png.\n\n### result-image-quality\n\n*Optional*. Quality of result image. Possible values between 0.0 and 1.0 inclusive. Default: browser default.\n\n### on-change\n\n*Optional*. Expression to evaluate upon changing the cropped part of the image. The cropped image data is available as $dataURI.\n\n### on-load-begin\n\n*Optional*. Expression to evaluate when the source image starts loading.\n\n### on-load-done\n\n*Optional*. Expression to evaluate when the source image successfully loaded.\n\n### on-load-error\n\n*Optional*. Expression to evaluate when the source image didn\'t load.\n\n\n## License\n\nSee the [LICENSE](https://github.com/alexk111/ngImgCrop/blob/master/LICENSE) file.\n\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'bc6f19e0a02d9c81cfdf669f59119fec7f6629a5',
+21 silly publish   bugs: { url: 'https://github.com/tommyp1ckles/ngImgCrop/issues' },
+21 silly publish   _id: 'ng-img-crop-dynamic@0.3.2',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: '30367bea487e51045d5ad9bd4bd5a895e4eec96e',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name ng-img-crop-dynamic
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'ng-img-crop-dynamic',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'ng-img-crop-dynamic',
+26 silly mapToRegistry   name: 'ng-img-crop-dynamic',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/ng-img-crop-dynamic
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/tomhadlaw/.npm/ng-img-crop-dynamic/0.3.2/package.tgz
+30 verbose request uri https://registry.npmjs.org/ng-img-crop-dynamic
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 1:10:06 PM
+33 verbose request using bearer token for auth
+34 verbose request id 096b16e2ddbf505c
+35 http request PUT https://registry.npmjs.org/ng-img-crop-dynamic
+36 http 403 https://registry.npmjs.org/ng-img-crop-dynamic
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Wed, 08 Feb 2017 17:10:08 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-jfk8151-JFK',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1486573807.309337,VS0,VE993',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/tomhadlaw/.npm/registry.npmjs.org/ng-img-crop-dynamic on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.3.2." : ng-img-crop-dynamic
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid ng-img-crop-dynamic
+43 verbose cwd /Users/tomhadlaw/Code/snippets/ngImgCrop
+44 error Darwin 16.0.0
+45 error argv "/usr/local/Cellar/node/6.5.0/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.5.0
+47 error npm  v3.10.3
+48 error code E403
+49 error "You cannot publish over the previously published version 0.3.2." : ng-img-crop-dynamic
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
