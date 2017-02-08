@@ -1,11 +1,11 @@
 /*!
- * ngImgCrop v0.3.3
+ * ngImgCrop v0.3.4
  * https://github.com/tommyp1ckles/ngImgCrop
  *
  * Copyright (c) 2017 Alex Kaul
  * License: MIT
  *
- * Generated at Wednesday, February 8th, 2017, 2:25:43 PM
+ * Generated at Wednesday, February 8th, 2017, 2:44:56 PM
  */
 (function() {
 'use strict';
@@ -1696,8 +1696,8 @@ crop.factory('cropHost', ['$document', '$window', 'cropAreaCircle', 'cropAreaSqu
       var temp_ctx, temp_canvas;
       temp_canvas = angular.element('<canvas></canvas>')[0];
       temp_ctx = temp_canvas.getContext('2d');
-      temp_canvas.width = theArea.getWidth();
-      temp_canvas.height = theArea.getHeight();
+      temp_canvas.width = image.width;
+      temp_canvas.height = image.height;
       if(image!==null){
         var areaWidth = theArea.getWidth(),
             areaHeight = theArea.getHeight();
@@ -1710,7 +1710,6 @@ crop.factory('cropHost', ['$document', '$window', 'cropAreaCircle', 'cropAreaSqu
         while(areaWidth*xRatio > image.width) { areaWidth--; }
         while(areaHeight*yRatio > image.height) { areaHeight--; }
 
-		//temp_ctx.drawImage(image, xLeft*xRatio, yTop*yRatio, areaWidth*xRatio, areaHeight*yRatio, 0, 0, resImgWidth, resImgHeight);
         temp_ctx.drawImage(image, xLeft*xRatio, yTop*yRatio, areaWidth*xRatio, areaHeight*yRatio, 0, 0, theArea.getWidth(), theArea.getHeight());
       }
       if (resImgQuality!==null ){

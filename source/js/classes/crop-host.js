@@ -220,8 +220,8 @@ crop.factory('cropHost', ['$document', '$window', 'cropAreaCircle', 'cropAreaSqu
       var temp_ctx, temp_canvas;
       temp_canvas = angular.element('<canvas></canvas>')[0];
       temp_ctx = temp_canvas.getContext('2d');
-      temp_canvas.width = theArea.getWidth();
-      temp_canvas.height = theArea.getHeight();
+      temp_canvas.width = image.width;
+      temp_canvas.height = image.height;
       if(image!==null){
         var areaWidth = theArea.getWidth(),
             areaHeight = theArea.getHeight();
