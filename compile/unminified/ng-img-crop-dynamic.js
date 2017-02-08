@@ -5,7 +5,7 @@
  * Copyright (c) 2017 Alex Kaul
  * License: MIT
  *
- * Generated at Wednesday, February 8th, 2017, 12:45:22 PM
+ * Generated at Wednesday, February 8th, 2017, 12:56:08 PM
  */
 (function() {
 'use strict';
@@ -1535,10 +1535,10 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
       var temp_ctx, temp_canvas;
       temp_canvas = angular.element('<canvas></canvas>')[0];
       temp_ctx = temp_canvas.getContext('2d');
-	  resImgSize = theArea.getX();
-	  console.log(resImgSize);
-      temp_canvas.width = theArea.getX();
-      temp_canvas.height = theArea.getX();
+	  resImgSize = theArea.getSize();
+	  console.log(theArea.getSize());
+      temp_canvas.width = theArea.getSize();
+      temp_canvas.height = theArea.getSize();
       if(image!==null){
         temp_ctx.drawImage(image, (theArea.getX()-theArea.getSize()/2)*(image.width/ctx.canvas.width), (theArea.getY()-theArea.getSize()/2)*(image.height/ctx.canvas.height), theArea.getSize()*(image.width/ctx.canvas.width), theArea.getSize()*(image.height/ctx.canvas.height), 0, 0, resImgSize, resImgSize);
       }
